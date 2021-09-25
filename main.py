@@ -36,7 +36,7 @@ parser.add_argument('-v', '--version', action='version')
 parser.add_argument('file',
 					metavar='file',
 					type=str,
-					help='Source file (*.png, *.jpg, *.jfif, *.bmp, *.mp4, *.avi, *.mov)')
+					help='Source file (*.png, *.jpg, *.jfif, *.bmp, *.mp4, *.avi, *.mov, *.gif)')
 parser.add_argument('-s',
 					metavar='pixelation',
 					action='store',
@@ -89,7 +89,7 @@ if os.path.exists(args.file):
 		img.save(args.o + ".png" if args.o == "output" else args.o)
 
 	# Video file
-	elif args.file.endswith('.mp4') or args.file.endswith('.avi') or args.file.endswith('.mov'):
+	elif args.file.endswith('.mp4') or args.file.endswith('.avi') or args.file.endswith('.mov') or args.file.endswith('.gif'):
 		print("Cleaning the workspace.")
 		resetCache()
 		print("Extracting frames.")
